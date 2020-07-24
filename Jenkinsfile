@@ -10,10 +10,11 @@ pipeline {
                  '''
              }
          }
-         stage('Lint HTML') {
-              steps {
-                  sh 'tidy -q -e *.html'
-              }
+       stage('Lint HTML'){
+           steps{
+             echo 'hello world'   
+             script {tidy -q -e index.html}
+           } 
          }
          stage('Security Scan') {
               steps { 
